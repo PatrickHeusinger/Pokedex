@@ -29,26 +29,39 @@ async function loadPokemon() {
         let response = await fetch(url);
         allPokemon[i] = await response.json();
 
-        renderPokemonInfo(i);
+        renderPokemonCards(i);
     }
     console.log(allPokemon);
 }
 
 
 
-function renderPokemonInfo(i) {
+function renderPokemonCards(i) {
     document.getElementById('pokemons').innerHTML += `
 
     <div id="pokedex">
 <div class="headDivider">
-<h1 id="pokemonName">${allPokemon[i]['name'].charAt(0).toUpperCase() + ['name'].slice(1)}</h1>
+<h3 id="pokemonName">${allPokemon[i]['name'].charAt(0).toUpperCase() + allPokemon[i]['name'].slice(1)}</h3>
 <span class="id" id="ID">#&nbsp${allPokemon[i]['id']}</span>
 </div>
 
 <img id="image" src="${allPokemon[i]['sprites']['other']['home']['front_default']}"></img><br>
-<span><b>Height</b>&nbsp:&nbsp${allPokemon[i]['height']}</span><br>
-<span><b>Weight</b>&nbsp:&nbsp${allPokemon[i]['weight']}</span><br>
+<div class="footerSpan">
+<span><b>Height</b>&nbsp:&nbsp${allPokemon[i]['height']/ 10}&nbspmtr.</span><br>
+<span><b>Weight</b>&nbsp:&nbsp${allPokemon[i]['weight']/10}&nbspkg</span><br>
 <span><b>Experience</b>&nbsp:&nbsp ${allPokemon[i]['base_experience']}</span>
 </div>
+</div>
 `;
+}
+
+function startPokemon() {
+    document.getElementById('parent').classList.remove('d-none');
+    document.getElementById('start').classList.add('d-none');
+}
+
+function scrollTop() {
+    document.getElementById('parent').scrollIntoView({
+        behavior: 'smooth'
+    });
 }
