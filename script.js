@@ -49,7 +49,8 @@ function renderPokemonCards(i) {
 <div class="footerSpan">
 <span><b>Height</b>&nbsp:&nbsp${allPokemon[i]['height']/ 10}&nbspmtr.</span><br>
 <span><b>Weight</b>&nbsp:&nbsp${allPokemon[i]['weight']/10}&nbspkg</span><br>
-<span><b>Experience</b>&nbsp:&nbsp ${allPokemon[i]['base_experience']}</span>
+<span><b>Experience</b>&nbsp:&nbsp ${allPokemon[i]['base_experience']}</span><br>
+<span><b>Type</b>&nbsp:&nbsp ${allPokemon[i]['types'][0]['type']['name']}</span>
 </div>
 </div>
 `;
@@ -60,8 +61,8 @@ function startPokemon() {
     document.getElementById('start').classList.add('d-none');
 }
 
-function scrollTop() {
-    document.getElementById('parent').scrollIntoView({
+function scrollBackToTop() {
+    document.getElementById('backToTop').scrollIntoView({
         behavior: 'smooth'
     });
 }
