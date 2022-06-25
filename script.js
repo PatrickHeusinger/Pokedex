@@ -80,6 +80,7 @@ function startPokemon() {
     document.getElementById('start').classList.add('d-none');
     document.getElementById('loadButton').classList.remove('d-none');
     document.getElementById('counting').classList.remove('d-none');
+    document.getElementById('backToTop').classList.remove('d-none');
 
 }
 
@@ -92,7 +93,6 @@ function scrollBackToTop() {
 function scrollYButton() {
     if (window.scrollY > 500) {
         document.getElementById('scrollToTop').classList.remove('d-none');
-
     } else {
         document.getElementById('scrollToTop').classList.add('d-none');
 

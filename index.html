@@ -17,32 +17,33 @@
 
 </head>
 
-<body onload="includeHTML();loadPokemon()">
+<body onload="includeHTML();loadPokemon()" onscroll="scrollYButton()">
 
     <div w3-include-html="templates/header.html"></div>
 
     <div id="start">
         <div class="buttonAlign">
-            <h1 class="animate">Pokedex Trainer App</h1>
+            <h1 class="animate">Pokedex Trainer</h1>
             <h2 class="animate" onclick="startPokemon()">...Click here to beginn your journey</h2>
         </div>
-
-
     </div>
-    <div id="backToTop"></div>
+
+    <div id="backToTop" class="d-none"></div>
 
     <div id="parent" class="parent d-none">
-
         <div id="pokemons"></div>
     </div>
+
     <div id="loadButton" class="loadMoreButton d-none">
         <div id="counting" class="counter d-none">
             <span id="counter"></span><span>Pokemons loaded</span>
         </div>
         <button class="loadMoreBtn" onclick="loadMorePokemon()">Load more Pokemons</button>
     </div>
+
     <div id="fullScreen"></div>
-    <button onclick="scrollBackToTop()" class="scrollBack d-none" id="scrollToTop">Back</button>
+
+    <span onclick="scrollBackToTop()" class="scrollBack d-none" id="scrollToTop">Back</span>
 
 </body>
 
