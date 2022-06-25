@@ -73,32 +73,13 @@ function loadMorePokemon() {
 /*-------------------------------------------hide--startscreen-----------------------------------------*/
 
 function startPokemon() {
-    openApp('parent', 'd-none');
-    closeStartScreen('start', 'd-none');
-    showLoadButton('loadButton', 'd-none');
-    showCounter('counting', 'd-none');
-    helpBackToTop('backToTop', 'd-none');
+    removeClass('parent', 'd-none');
+    addClass('start', 'd-none');
+    removeClass('loadButton', 'd-none');
+    removeClass('counting', 'd-none');
+    removeClass('backToTop', 'd-none');
 }
 
-function openApp(id, className) {
-    document.getElementById(id).classList.remove(className);
-}
-
-function closeStartScreen(id, className) {
-    document.getElementById(id).classList.add(className);
-}
-
-function showLoadButton(id, className) {
-    document.getElementById(id).classList.remove(className);
-}
-
-function showCounter(id, className) {
-    document.getElementById(id).classList.remove(className);
-}
-
-function helpBackToTop(id, className) {
-    document.getElementById(id).classList.remove(className);
-}
 /*--------------------------------------------------------------scroll--functions-----------------------------------------*/
 
 function scrollBackToTop() {
@@ -114,4 +95,14 @@ function scrollYButton() {
         document.getElementById('scrollToTop').classList.add('d-none');
 
     }
+}
+
+/*-----------------------------------remove--and--add--class----------------------------------------------------------*/
+
+function removeClass(id, className) {
+    document.getElementById(id).classList.remove(className);
+}
+
+function addClass(id, className) {
+    document.getElementById(id).classList.add(className);
 }

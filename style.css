@@ -204,3 +204,12 @@
             opacity: 1;
         }
     }
+    
+    @media (max-width:800px) {
+        h1 {
+            font-size: 60px !important;
+        }
+        h2 {
+            font-size: 20px !important;
+        }
+    }
