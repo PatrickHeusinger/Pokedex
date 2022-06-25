@@ -22,9 +22,6 @@ let morePokemon = 0;
 
 
 async function loadPokemon() {
-    //   let url = 'https://pokeapi.co/api/v2/pokemon?limit=400&offset=0';
-    //   let response = await fetch(url);
-    //   allPokemon = await response.json();
     for (let i = start; i < end; i++) {
         let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         let response = await fetch(url);
@@ -76,12 +73,32 @@ function loadMorePokemon() {
 }
 
 function startPokemon() {
-    document.getElementById('parent').classList.remove('d-none');
-    document.getElementById('start').classList.add('d-none');
-    document.getElementById('loadButton').classList.remove('d-none');
-    document.getElementById('counting').classList.remove('d-none');
-    document.getElementById('backToTop').classList.remove('d-none');
+    openApp('parent', 'd-none');
+    closeStartScreen('start', 'd-none');
+    showLoadButton('loadButton', 'd-none');
+    showCounter('counting', 'd-none');
+    helpBackToTop('backToTop', 'd-none');
 
+}
+
+function openApp(id, className) {
+    document.getElementById(id).classList.remove(className);
+}
+
+function closeStartScreen(id, className) {
+    document.getElementById(id).classList.add(className);
+}
+
+function showLoadButton(id, className) {
+    document.getElementById(id).classList.remove(className);
+}
+
+function showCounter(id, className) {
+    document.getElementById(id).classList.remove(className);
+}
+
+function helpBackToTop(id, className) {
+    document.getElementById(id).classList.remove(className);
 }
 
 function scrollBackToTop() {
