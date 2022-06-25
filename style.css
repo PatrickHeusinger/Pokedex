@@ -1,156 +1,198 @@
-body {
-    margin: 0;
-    font-family: 'Bowlby One SC', cursive !important;
-}
-
-h1 {
-    font-size: 100px !important;
-    font-weight: bold;
-    color: rgb(13, 7, 7);
-    padding-bottom: 100px;
-    text-shadow: 2px 2px #ff0000;
-}
-
-h2 {
-    font-size: 50px;
-    font-weight: bold;
-    color: rgb(238, 226, 226);
-    text-shadow: 2px 2px #121111;
-}
-
-h3 {
-    text-shadow: 2px 2px #ff0000;
-}
-
-.header {
-    display: flex;
-    margin-top: 100px;
-    position: fixed;
-    top: 0;
-    left: 50px;
-}
-
-h2:hover {
-    text-shadow: 2px 2px 5px red;
-}
-
-.pokemonHeader {
-    width: 100px;
-}
-
-.ballImg {
-    width: 50px;
-    padding-top: 5px;
-    cursor: pointer;
-}
-
-.buttonAlign {
-    position: absolute;
-    bottom: 20%;
-    text-align: center;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-}
-
-#start {
-    background-image: url("img/startscreen.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.container-fluid {
-    background-color: white !important;
-}
-
-.navbar {
-    padding: 0 !important;
-}
-
-.offcanvas {
-    width: 200px !important;
-}
-
-.navbar-brand img {
-    margin-left: 20px;
-}
-
-.parent {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 150px;
-}
-
-#pokemons {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1400px;
-    justify-content: center;
-}
-
-#pokedex {
-    margin-top: 100px;
-    min-height: 500px;
-    background-color: rgb(44, 171, 65);
-    color: white;
-    border-radius: 15px;
-    outline: 1px solid rgb(67, 67, 67);
-    margin: 10px;
-    box-shadow: 5px 6px #c7c3c3b3;
-}
-
-#pokedex span {
-    padding-left: 20px;
-}
-
-#image {
-    width: 300px;
-    margin-bottom: 30px;
-}
-
-.footerSpan {
-    padding-bottom: 20px;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px #ff0000;
-}
-
-.id {
-    font-size: 30px;
-    text-shadow: 2px 2px #ff0000;
-}
-
-.headDivider {
-    display: flex;
-    justify-content: space-between;
-}
-
-.headDivider {
-    padding: 10px;
-}
-
-.d-none {
-    display: none;
-}
-
-.btn {
-    margin-top: 150px;
-}
-
-.animate {
-    animation: 3s fadeIn ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+    body {
+        margin: 0;
+        font-family: 'Bowlby One SC', cursive !important;
     }
-    to {
-        opacity: 1;
+    
+    h1 {
+        font-size: 100px !important;
+        font-weight: bold;
+        color: rgb(13, 7, 7);
+        padding-bottom: 100px;
+        text-shadow: 2px 2px #ff0000;
     }
-}
+    
+    h2 {
+        font-size: 50px;
+        font-weight: bold;
+        color: rgb(238, 226, 226);
+        text-shadow: 2px 2px #121111;
+    }
+    
+    h3 {
+        text-shadow: 2px 2px #ff0000;
+    }
+    
+    .header {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 50px;
+    }
+    
+    .counter {
+        margin-top: 100px;
+    }
+    
+    .counter span {
+        padding-left: 25px;
+    }
+    
+    h2:hover {
+        text-shadow: 2px 2px 5px red;
+    }
+    
+    .pokemonHeader {
+        width: 100px;
+    }
+    
+    .ballImg {
+        width: 50px;
+        padding-top: 5px;
+        cursor: pointer;
+    }
+    
+    .buttonAlign {
+        position: absolute;
+        bottom: 20%;
+        text-align: center;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    #start {
+        background-image: url("img/startscreen.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .container-fluid {
+        background-color: white !important;
+    }
+    
+    .navbar {
+        padding: 0 !important;
+    }
+    
+    .offcanvas {
+        width: 200px !important;
+    }
+    
+    .navbar-brand img {
+        margin-left: 20px;
+    }
+    
+    .parent {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 50px;
+    }
+    
+    #pokemons {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1400px;
+        justify-content: center;
+    }
+    
+    #pokedex {
+        margin-top: 100px;
+        min-height: 500px;
+        background-color: rgb(44, 171, 65);
+        color: white;
+        border-radius: 15px;
+        outline: 1px solid rgb(67, 67, 67);
+        margin: 10px;
+        box-shadow: 5px 6px #c7c3c3b3;
+    }
+    
+    #pokedex span {
+        padding-left: 20px;
+    }
+    
+    #image {
+        width: 300px;
+        margin-bottom: 30px;
+    }
+    
+    #image:hover {
+        cursor: pointer;
+    }
+    
+    .footerSpan {
+        padding-bottom: 20px;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px #ff0000;
+    }
+    
+    .id {
+        font-size: 30px;
+        text-shadow: 2px 2px #ff0000;
+    }
+    
+    .headDivider {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .headDivider {
+        padding: 10px;
+    }
+    
+    .d-none {
+        display: none;
+    }
+    
+    .btn {
+        margin-top: 150px;
+    }
+    
+    .loadMoreButton {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 25px;
+    }
+    
+    .loadMoreBtn {
+        background-color: rgb(44, 171, 65);
+        color: white;
+        border-radius: 15px;
+        border: 1px solid rgb(67, 67, 67);
+        margin: 30px;
+        padding: 5px;
+        box-shadow: 5px 6px #c7c3c3b3;
+    }
+    
+    .scrollBack {
+        position: fixed;
+        right: 40px;
+        bottom: 50px;
+        z-index: 9;
+        background-color: rgb(44, 171, 65);
+        color: white;
+        border-radius: 15px;
+        border: 1px solid rgb(67, 67, 67);
+        padding: 5px;
+        box-shadow: 5px 6px #c7c3c3b3;
+    }
+    
+    .animate {
+        animation: 3s fadeIn ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }

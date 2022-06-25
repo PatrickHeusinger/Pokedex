@@ -18,18 +18,20 @@ async function includeHTML() {
 let start = 1;
 let end = 21;
 let allPokemon = [];
+let morePokemon = 0;
 
 
 async function loadPokemon() {
-    let url = 'https://pokeapi.co/api/v2/pokemon?limit=400&offset=0';
-    let response = await fetch(url);
-    allPokemon = await response.json();
+    //   let url = 'https://pokeapi.co/api/v2/pokemon?limit=400&offset=0';
+    //   let response = await fetch(url);
+    //   allPokemon = await response.json();
     for (let i = start; i < end; i++) {
         let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
         let response = await fetch(url);
         allPokemon[i] = await response.json();
 
         renderPokemonCards(i);
+
     }
     console.log(allPokemon);
 }
@@ -39,30 +41,60 @@ async function loadPokemon() {
 function renderPokemonCards(i) {
     document.getElementById('pokemons').innerHTML += `
 
-    <div id="pokedex">
+    <div onclick="fullScreen()" id="pokedex">
 <div class="headDivider">
 <h3 id="pokemonName">${allPokemon[i]['name'].charAt(0).toUpperCase() + allPokemon[i]['name'].slice(1)}</h3>
-<span class="id" id="ID">#&nbsp${allPokemon[i]['id']}</span>
+<span class="id" id="ID">#${allPokemon[i]['id']}</span>
 </div>
-
 <img id="image" src="${allPokemon[i]['sprites']['other']['home']['front_default']}"></img><br>
 <div class="footerSpan">
-<span><b>Height</b>&nbsp:&nbsp${allPokemon[i]['height']/ 10}&nbspmtr.</span><br>
+<span><b>Height</b>&nbsp:&nbsp${allPokemon[i]['height']/10}&nbspmtr.</span><br>
 <span><b>Weight</b>&nbsp:&nbsp${allPokemon[i]['weight']/10}&nbspkg</span><br>
-<span><b>Experience</b>&nbsp:&nbsp ${allPokemon[i]['base_experience']}</span><br>
+<span><b>Experience</b>&nbsp:&nbsp ${allPokemon[i]['base_experience']}&nbspxp</span><br>
 <span><b>Type</b>&nbsp:&nbsp ${allPokemon[i]['types'][0]['type']['name']}</span>
 </div>
 </div>
 `;
+    countPokemons();
+}
+
+function countPokemons() {
+    document.getElementById('counter').innerHTML = allPokemon.length - 1;
+}
+
+function fullScreen() {
+
+    console.log('test');
+}
+
+
+function loadMorePokemon() {
+    start = end;
+    end += 20;
+    loadPokemon();
+
 }
 
 function startPokemon() {
     document.getElementById('parent').classList.remove('d-none');
     document.getElementById('start').classList.add('d-none');
+    document.getElementById('loadButton').classList.remove('d-none');
+    document.getElementById('counting').classList.remove('d-none');
+
 }
 
 function scrollBackToTop() {
-    document.getElementById('backToTop').scrollIntoView({
+    document.getElementById('counting').scrollIntoView({
         behavior: 'smooth'
     });
+}
+
+function scrollYButton() {
+    if (window.scrollY > 500) {
+        document.getElementById('scrollToTop').classList.remove('d-none');
+
+    } else {
+        document.getElementById('scrollToTop').classList.add('d-none');
+
+    }
 }
