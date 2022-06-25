@@ -84,7 +84,7 @@ function startPokemon() {
 }
 
 function scrollBackToTop() {
-    document.getElementById('counting').scrollIntoView({
+    document.getElementById('backToTop').scrollIntoView({
         behavior: 'smooth'
     });
 }

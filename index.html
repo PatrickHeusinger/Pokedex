@@ -20,9 +20,7 @@
 <body onload="includeHTML();loadPokemon()">
 
     <div w3-include-html="templates/header.html"></div>
-    <div id="counting" class="counter d-none">
-        <span id="counter"></span><span>Pokemons loaded</span>
-    </div>
+
     <div id="start">
         <div class="buttonAlign">
             <h1 class="animate">Pokedex Trainer App</h1>
@@ -38,11 +36,13 @@
         <div id="pokemons"></div>
     </div>
     <div id="loadButton" class="loadMoreButton d-none">
-
+        <div id="counting" class="counter d-none">
+            <span id="counter"></span><span>Pokemons loaded</span>
+        </div>
         <button class="loadMoreBtn" onclick="loadMorePokemon()">Load more Pokemons</button>
     </div>
     <div id="fullScreen"></div>
-    <button onclick="scrollBackToTop()" class="scrollBack" id="scrollToTop">Back</button>
+    <button onclick="scrollBackToTop()" class="scrollBack d-none" id="scrollToTop">Back</button>
 
 </body>
 
