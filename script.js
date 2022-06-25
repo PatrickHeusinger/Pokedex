@@ -90,10 +90,9 @@ function scrollBackToTop() {
 
 function scrollYButton() {
     if (window.scrollY > 500) {
-        document.getElementById('scrollToTop').classList.remove('d-none');
+        removeClass('scrollToTop', 'd-none');
     } else {
-        document.getElementById('scrollToTop').classList.add('d-none');
-
+        addClass('scrollToTop', 'd-none');
     }
 }
 

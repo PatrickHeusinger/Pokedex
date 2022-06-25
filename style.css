@@ -181,7 +181,7 @@
     .scrollBack {
         position: fixed;
         right: 40px;
-        bottom: 50px;
+        bottom: 20px;
         z-index: 9;
         background-color: rgb(44, 171, 65);
         color: white;
@@ -190,6 +190,26 @@
         padding: 5px;
         box-shadow: 5px 6px #c7c3c3b3;
         cursor: pointer;
+    }
+    
+    .impressum {
+        background-color: white;
+        color: black;
+        padding: 50px;
+        margin-top: 50px;
+    }
+    
+    .impressum a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .impressum a:hover {
+        color: rgb(131, 130, 130);
+    }
+    
+    .impressumWidth {
+        width: 80%;
     }
     
     .animate {
