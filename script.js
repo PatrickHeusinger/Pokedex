@@ -12,14 +12,11 @@ async function includeHTML() {
     }
 }
 
-
-
-
 let start = 1;
 let end = 21;
 let allPokemon = [];
-let morePokemon = 0;
 
+/*---------------------------------------------fetch--api--------------------------------------------*/
 
 async function loadPokemon() {
     for (let i = start; i < end; i++) {
@@ -33,7 +30,7 @@ async function loadPokemon() {
     console.log(allPokemon);
 }
 
-
+/*--------------------------------------------render--cards---------------------------------------------*/
 
 function renderPokemonCards(i) {
     document.getElementById('pokemons').innerHTML += `
@@ -54,16 +51,18 @@ function renderPokemonCards(i) {
 `;
     countPokemons();
 }
+/*--------------------------------------------counter-------------------------------------------------*/
 
 function countPokemons() {
     document.getElementById('counter').innerHTML = allPokemon.length - 1;
 }
+/*-------------------------------------------fullscreen------------------------------------------------*/
 
 function fullScreen() {
 
     console.log('test');
 }
-
+/*-------------------------------------------load--more--cards------------------------------------------*/
 
 function loadMorePokemon() {
     start = end;
@@ -71,6 +70,7 @@ function loadMorePokemon() {
     loadPokemon();
 
 }
+/*-------------------------------------------hide--startscreen-----------------------------------------*/
 
 function startPokemon() {
     openApp('parent', 'd-none');
@@ -78,7 +78,6 @@ function startPokemon() {
     showLoadButton('loadButton', 'd-none');
     showCounter('counting', 'd-none');
     helpBackToTop('backToTop', 'd-none');
-
 }
 
 function openApp(id, className) {
@@ -100,6 +99,7 @@ function showCounter(id, className) {
 function helpBackToTop(id, className) {
     document.getElementById(id).classList.remove(className);
 }
+/*--------------------------------------------------------------scroll--functions-----------------------------------------*/
 
 function scrollBackToTop() {
     document.getElementById('backToTop').scrollIntoView({
