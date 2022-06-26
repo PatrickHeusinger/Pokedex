@@ -26,21 +26,23 @@ async function loadPokemon() {
 
         renderPokemonCards(i);
 
+
     }
+
     console.log(allPokemon);
 }
 
 /*--------------------------------------------render--cards---------------------------------------------*/
 
 function renderPokemonCards(i) {
-    document.getElementById('pokemons').innerHTML += `
+    document.getElementById('pokemons').innerHTML += /*html*/ `
 
-    <div onclick="fullScreen()" id="pokedex">
+    <div onclick="fullScreen(${i})" id="pokedex">
 <div class="headDivider">
-<h3 id="pokemonName">${allPokemon[i]['name'].charAt(0).toUpperCase() + allPokemon[i]['name'].slice(1)}</h3>
+<h3 id="pokemonName">${allPokemon[i]['name']}</h3>
 <span class="id" id="ID">#${allPokemon[i]['id']}</span>
 </div>
-<img id="image" src="${allPokemon[i]['sprites']['other']['home']['front_default']}"></img><br>
+<img id="image" src="${allPokemon[i]['sprites']['other']['home']['front_default']}"><br>
 <div class="footerSpan">
 <span><b>Height</b>&nbsp:&nbsp${allPokemon[i]['height']/10}&nbspmtr.</span><br>
 <span><b>Weight</b>&nbsp:&nbsp${allPokemon[i]['weight']/10}&nbspkg</span><br>
@@ -50,6 +52,7 @@ function renderPokemonCards(i) {
 </div>
 `;
     countPokemons();
+
 }
 /*--------------------------------------------counter-------------------------------------------------*/
 
@@ -58,10 +61,42 @@ function countPokemons() {
 }
 /*-------------------------------------------fullscreen------------------------------------------------*/
 
-function fullScreen() {
+function fullScreen(i) {
 
+    let showFullScreen = document.getElementById('fullScreen');
+    showFullScreen.innerHTML = '';
+    showFullScreen.innerHTML = /*html*/ `
+    <div onclick="closeFullScreen(${i})" id="pokedex">
+    <div class="headDivider">
+    <h3 id="pokemonName">${allPokemon[i]['name']}</h3>
+    <span class="id" id="ID">#${allPokemon[i]['id']}</span>
+    </div>
+    <img id="image" src="${allPokemon[i]['sprites']['other']['home']['front_default']}"><br>
+    <div class="footerSpan">
+    <span><b>Height</b>&nbsp:&nbsp${allPokemon[i]['height']/10}&nbspmtr.</span><br>
+    <span><b>Weight</b>&nbsp:&nbsp${allPokemon[i]['weight']/10}&nbspkg</span><br>
+    <span><b>Experience</b>&nbsp:&nbsp ${allPokemon[i]['base_experience']}&nbspxp</span><br>
+    <span><b>Type</b>&nbsp:&nbsp ${allPokemon[i]['types'][0]['type']['name']}</span>
+    </div>
+    </div>
+    `;
+
+    addClass('parent', 'd-none');
+    addClass('loadButton', 'd-none');
+    addClass('backToTop', 'd-none');
+    removeClass('fullScreen', 'd-none');
     console.log('test');
 }
+
+function closeFullScreen() {
+    let closeFullScreen = document.getElementById('fullScreen');
+    closeFullScreen.innerHTML = '';
+    removeClass('parent', 'd-none');
+    removeClass('loadButton', 'd-none');
+    addClass('fullScreen', 'd-none');
+    renderPokemonCards(i);
+}
+
 /*-------------------------------------------load--more--cards------------------------------------------*/
 
 function loadMorePokemon() {
