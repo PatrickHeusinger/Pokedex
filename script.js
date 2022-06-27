@@ -133,7 +133,7 @@ function scrollYButton() {
     }
 }
 
-/*-----------------------------------remove--and--add--class----------------------------------------------------------*/
+/*-----------------------------------remove--and--add--class--------------------------------------------------------------------*/
 
 function removeClass(id, className) {
     document.getElementById(id).classList.remove(className);
@@ -143,6 +143,6 @@ function addClass(id, className) {
     document.getElementById(id).classList.add(className);
 }
 
-function emptyHTML(id) {
+function emptyInnerHTML(id) {
     document.getElementById(id).innerHTML = '';
 }
