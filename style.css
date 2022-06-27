@@ -113,8 +113,9 @@
         justify-content: center;
         background-image: url("img/startscreen.png");
         background-size: cover;
-        background-position: top;
+        background-position: center;
         background-repeat: no-repeat;
+        background-attachment: fixed;
         height: 100vh;
         padding-top: 15%;
     }
