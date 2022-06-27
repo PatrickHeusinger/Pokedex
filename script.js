@@ -95,7 +95,7 @@ function closeFullScreen() {
     removeClass('parent', 'd-none');
     removeClass('loadButton', 'd-none');
     addClass('fullScreen', 'd-none');
-    addClass('backToTop', 'd-none');
+    removeClass('backToTop', 'd-none');
     renderPokemonCards(i);
 }
 
