@@ -142,3 +142,7 @@ function removeClass(id, className) {
 function addClass(id, className) {
     document.getElementById(id).classList.add(className);
 }
+
+function emptyHTML(id) {
+    document.getElementById(id).innerHTML = '';
+}
