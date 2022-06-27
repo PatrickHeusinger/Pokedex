@@ -51,7 +51,7 @@ function renderPokemonCards(i) {
 </div>
 </div>
 `;
-    removeClass('backToTop', 'd-none');
+
     countPokemons();
 
 }
@@ -84,7 +84,6 @@ function fullScreen(i) {
 
     addClass('parent', 'd-none');
     addClass('loadButton', 'd-none');
-    addClass('backToTop', 'd-none');
     removeClass('fullScreen', 'd-none'); /*------------button remove class d-none to scroll back ! important*/
     console.log('test');
 }
@@ -95,7 +94,6 @@ function closeFullScreen() {
     removeClass('parent', 'd-none');
     removeClass('loadButton', 'd-none');
     addClass('fullScreen', 'd-none');
-    removeClass('backToTop', 'd-none');
     renderPokemonCards(i);
 }
 
@@ -114,13 +112,13 @@ function startPokemon() {
     addClass('start', 'd-none');
     removeClass('loadButton', 'd-none');
     removeClass('counting', 'd-none');
-    removeClass('backToTop', 'd-none');
+
 }
 
 /*--------------------------------------------------------------scroll--functions-----------------------------------------*/
 
 function scrollBackToTop() {
-    document.getElementById('backToTop').scrollIntoView({
+    document.getElementById('parent').scrollIntoView({
         behavior: 'smooth'
     });
 }

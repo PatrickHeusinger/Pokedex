@@ -105,7 +105,7 @@
     .parent {
         display: flex;
         justify-content: space-around;
-        padding-top: 50px;
+        padding-top: 0px;
     }
     
     .fullScreenDiv {
@@ -125,6 +125,7 @@
         flex-wrap: wrap;
         max-width: 1400px;
         justify-content: center;
+        padding-top: 150px;
     }
     
     #pokedex {
@@ -136,6 +137,7 @@
         border: 1px solid rgb(67, 67, 67);
         margin: 10px;
         box-shadow: 5px 6px #c7c3c3b3;
+        cursor: pointer;
     }
     
     #pokedex span {
@@ -145,10 +147,6 @@
     #image {
         width: 300px;
         margin-bottom: 30px;
-    }
-    
-    #image:hover {
-        cursor: pointer;
     }
     
     .footerSpan {
